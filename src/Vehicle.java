@@ -63,6 +63,7 @@
 
             Truck semi = new Truck(2, 200, 25, 4);
             Truck pickup = new Truck(3, 80, 15, 1);
+            OffRoad car3 = new OffRoad(2, 45, 13, 40);
             double liters;
             int dist = 252;
 
@@ -73,6 +74,30 @@
             liters = pickup.fuelneeded(dist);
             System.out.println("Pickup car transport " + pickup.getCargocap() + " tons of cargo");
             System.out.println("Distance " + dist + " km, pickup car needed " + liters + " liters fuel");
+
+            liters = car3.fuelneeded(dist);
+            System.out.println("Car 3 has ground clearance: " + car3.getGroundClearance() + " cm");
         }
+    }
+
+    class OffRoad extends Vehicle{
+
+    private int groundClearance;
+
+
+        OffRoad(final int p, final int f, final double l, int gC) {
+            super(p, f, l);
+            this.groundClearance = gC;
+
+        }
+
+        int getGroundClearance(){
+        return groundClearance;
+        }
+
+        void setGroundClearance(int gC){
+            this.groundClearance = gC;
+        }
+
     }
 
